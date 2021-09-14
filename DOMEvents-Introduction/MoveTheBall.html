@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    #field {
+      width: 200px;
+      height: 150px;
+      border: 10px solid black;
+      background-color: #00FF00;
+      overflow: hidden;
+      position: relative;
+    }
+    #ball{
+      position: absolute;
+      left:0px;
+      top:0px;
+
+    }
+  </style>
+  <script>
+    document.addEventListener("click", e => {
+      let fieldCoords = this.getBoundingClientRect();
+      let x= e.clientX;
+      let y= e.clientY;
+      console.log(fieldCoords.style.left+"   "+y)
+      let ball=document.getElementById("ball")
+      let field=document.getElementById("field")
+      alert(field.style.left+"  "+field.style.top)
+      if (x > 10 && x < 200 && y > 50 && y < 200){
+        ball.style.left = x-field.style.left+'px';
+        ball.style.top = y-field.style.top+'px';
+      }
+    });
+    
+  </script>
+</head>
+
+<body style="height:2000px">
+
+  Click on a field to move the ball there.
+  <br> The ball should never leave the field.
+
+
+  <div id="field">
+    <img src="https://en.js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  </div>
+
+
+</body>
+</html>

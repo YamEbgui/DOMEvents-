@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <input type="button" id="hider" value="Click to hide the text" />
+
+  <div id="text">Text</div>
+
+  <script>
+    const buttonHider = document.getElementById("hider");
+    const textId = document.getElementById("text");
+    buttonHider.onclick = removeText;
+     function removeText(){
+     textId.remove();
+    }
+  </script>
+
+</body>
+</html>
