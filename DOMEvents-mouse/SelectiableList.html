@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .selected {
+      background: #0f0;
+    }
+
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  Click on a list item to select it.
+  <br>
+
+  <ul id="ul">
+    <li>Christopher Robin</li>
+    <li>Winnie-the-Pooh</li>
+    <li>Tigger</li>
+    <li>Kanga</li>
+    <li>Rabbit. Just rabbit.</li>
+  </ul>
+
+  <script>
+  let ul=document.getElementById("ul")
+  ul.addEventListener('click', doingIt)
+  function removeBack(){
+    for (let i=0 ; i < ul.children.length ; i++){
+      ul.children[i].style.backgroundColor = "white"; 
+    }
+  }
+  function doingIt(event){
+    if (event.target.tagName === 'LI'){
+      if (!event.ctrlKey){
+        removeBack()
+      }
+      let targetElement = event.target;
+      targetElement.style.backgroundColor = "green"
+    }
+  }
+  </script>
+
+</body>
+</html>
